@@ -990,6 +990,7 @@ class FlaxPreTrainedModel(PushToHubMixin, FlaxGenerationMixin):
         # get abs dir
         save_directory = os.path.abspath(save_directory)
         # save config as well
+        # `self.__class__.__name__[4:]` removes "Flax" from the name of the current class
         self.config.architectures = [self.__class__.__name__[4:]]
 
         # If we have a custom model, we copy the file defining it in the folder and set the attributes so it can be
